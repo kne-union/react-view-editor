@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/General/Icon/index.js"],"names":["applyVariable"],"mappings":"mNAGA,G,0EAAeA,YAAf","file":"static/js/46.96632557.chunk.js","sourcesContent":["import { applyVariable } from '../../util';\nimport { Iconfont } from '@kne/antd-enhance';\n\nexport default applyVariable(Iconfont);\n"],"sourceRoot":""}

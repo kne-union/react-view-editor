@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/General/Progress/index.js"],"names":["applyVariable"],"mappings":"mNAGA,G,0EAAeA,YAAf","file":"static/js/40.cac09acf.chunk.js","sourcesContent":["import { Progress } from 'antd';\nimport { applyVariable } from '../../util';\n\nexport default applyVariable(Progress);"],"sourceRoot":""}

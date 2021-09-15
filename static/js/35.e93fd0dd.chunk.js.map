@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/General/Tooltip/index.js"],"names":["applyVariable"],"mappings":"mNAGA,G,0EAAeA,YAAf","file":"static/js/35.e93fd0dd.chunk.js","sourcesContent":["import { Tooltip } from 'antd';\nimport { applyVariable } from '../../util';\n\nexport default applyVariable(Tooltip);"],"sourceRoot":""}
