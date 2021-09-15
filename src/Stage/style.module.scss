@@ -1,0 +1,188 @@
+.stage {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  flex: 1;
+}
+
+.content {
+  transform-origin: 0 0;
+}
+
+.axis {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.background {
+  background: #fff;
+}
+
+.scaler {
+  position: absolute;
+  display: flex;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  color: #cacaca;
+  right: 46px;
+  bottom: 100px;
+  height: 32px;
+  line-height: 30px;
+  background: #262626;
+  text-align: center;
+  user-select: none;
+  opacity: 0.8;
+}
+
+.scale-value {
+  width: 40px;
+}
+
+.btn {
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.page-position {
+  position: absolute;
+  min-height: 800px;
+  background: #fff;
+}
+
+.page, .active-mirror {
+  color: #333;
+  user-select: none;
+  cursor: move;
+
+  :global {
+    .react-form {
+      min-height: 50px;
+      background: rgba(210, 110, 210, 0.2);
+
+      &:nth-child(even) {
+        background: rgba(160, 160, 210, 0.2);
+      }
+    }
+
+    .ant-row {
+      min-height: 40px;
+      min-width: 80px;
+      background: rgba(210, 210, 210, 0.2);
+      box-sizing: border-box;
+
+      &:nth-child(even) {
+        background: rgba(210, 210, 110, 0.2);
+      }
+    }
+
+    .ant-col {
+      min-height: 40px;
+      min-width: 80px;
+      background: rgba(110, 210, 210, 0.2);
+      box-sizing: border-box;
+
+      &:nth-child(even) {
+        background: rgba(110, 210, 110, 0.2);
+      }
+    }
+
+    .ant-btn, .ant-btn > .ant-btn-loading-icon {
+      transition: none;
+    }
+
+    .view-render-list:empty {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+
+      &:after {
+        color: #1890ff;
+        content: '需要预览，请先选择数据源，数据源长度至少为1';
+      }
+    }
+
+    .view-render-condition:empty {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+
+      &:after {
+        color: #1890ff;
+        content: '需要预览，请先选择数据源和判断条件，确保判断条件的执行结果为true';
+      }
+    }
+
+    .view-render-mapping:empty, .view-render-state:empty, .view-render-remote:empty, .view-render-div:empty, .view-render-space:empty {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+
+      &:after {
+        color: #1890ff;
+        content: '请添加组件'
+      }
+    }
+  }
+}
+
+.active-mirror {
+  position: absolute;
+  cursor: move;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.active-outer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  .page {
+    pointer-events: none;
+  }
+}
+
+.options {
+  position: absolute;
+  background: #1890ff;
+  bottom: -5px;
+  transform: translate(0, 100%);
+  padding: 2px 4px;
+  border-radius: 6px;
+  right: 0;
+
+  &.left {
+    right: auto;
+    left: 0;
+  }
+
+  &.top {
+    bottom: auto;
+    top: -5px;
+    transform: translate(0, -100%);
+  }
+}
+
+.options-btn {
+  color: #fff;
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.options-id {
+  margin: 2px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.active {
+  position: absolute;
+  border: solid 1px #1890ff;
+}

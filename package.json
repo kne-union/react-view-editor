@@ -1,0 +1,89 @@
+{
+  "name": "@kne/react-view-editor",
+  "version": "0.1.0",
+  "description": "页面编辑器",
+  "author": "linzp",
+  "license": "MIT",
+  "homepage": "https://github.com/kne-union/react-view-editor",
+  "repository": "https://github.com/kne-union/react-view-editor",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "init": "npm install && cd example && npm install",
+    "start": "run-p start:lib start:example",
+    "build": "run-s build:lib build:example",
+    "build:lib": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
+    "start:lib": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build:example": "cd example && npm run build",
+    "start:example": "cd example && npm run start",
+    "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+    "deploy": "gh-pages -d example/build"
+  },
+  "peerDependencies": {
+    "@kne/react-form-antd": "1.2.x",
+    "prop-types": "15.x",
+    "react": "16.x",
+    "react-dom": "16.x",
+    "antd": "4.x"
+  },
+  "devDependencies": {
+    "antd": "^4.16.13",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.27.0",
+    "eslint-config-react-app": "^6.0.0",
+    "fs-extra": "^10.0.0",
+    "gh-pages": "^2.2.0",
+    "glob": "^7.1.7",
+    "http-proxy-middleware": "^2.0.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "microbundle": "^0.13.1",
+    "node-sass": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "pify": "^5.0.0",
+    "prettier": "^2.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@kne/antd-enhance": "^0.1.7",
+    "@kne/compose": "^0.1.0",
+    "@kne/react-view-render": "^0.1.9",
+    "@loadable/component": "^5.15.0",
+    "ajv": "^8.6.2",
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "codemirror": "^5.62.3",
+    "fbemitter": "^3.0.0",
+    "lodash": "^4.17.21",
+    "rc-resize-observer": "^1.0.0",
+    "react-monaco-editor": "^0.44.0",
+    "use-debounce": "^7.0.0"
+  }
+}

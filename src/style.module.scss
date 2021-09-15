@@ -1,0 +1,24 @@
+.body {
+  min-height: 100vh;
+  background: #262626;
+  color: #fff;
+  user-select: none;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.menu {
+  border-right: 1px solid #000;
+}
+
+.stage {
+  flex: 1;
+  height: 100%;
+}

@@ -1,0 +1,9 @@
+.active-mirror {
+  position: absolute;
+  cursor: move;
+  z-index: 999;
+
+  svg {
+    border-radius: 10px;
+  }
+}

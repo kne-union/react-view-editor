@@ -1,0 +1,92 @@
+.menu-list {
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #000;
+  position: relative;
+}
+
+.list-inner {
+  background: #262626;
+  color: #fff;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.add {
+  padding: 16px 0;
+  cursor: pointer;
+  writing-mode: tb-rl;
+  line-height: 18px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 4px;
+
+  > .anticon {
+    margin: 0 0 8px;
+  }
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  background: #262626;
+  transition: right 300ms;
+  z-index: 99;
+}
+
+.active {
+  right: -402px;
+}
+
+.component-list {
+  height: 100%;
+  padding: 10px;
+
+  :global {
+    .ant-tabs-tab-btn {
+      writing-mode: tb-rl;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+
+  &:global {
+    &.ant-tabs-left.ant-tabs-card {
+      .ant-tabs-nav {
+        min-width: auto;
+      }
+
+      .ant-tabs-tab {
+        padding: 8px 4px;
+      }
+    }
+  }
+}
+
+.component-item {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px #eee;
+  cursor: move;
+  user-select: none;
+  white-space: nowrap;
+  color: #fff;
+
+  &.is-mirror {
+    position: absolute;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.component-container {
+  flex-wrap: wrap;
+}
